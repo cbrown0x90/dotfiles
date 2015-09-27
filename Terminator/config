@@ -1,3 +1,5 @@
+#For Terminator to lock exactly like my screenshot my zsh config is required.
+
 [global_config]
   focus = system
   suppress_multiple_term_dialog = True
