@@ -1,3 +1,4 @@
 # dotfiles
 Dot files for everything I use frequently
-i3 and whatnot, ncmpcpp, terminator, and vim
+
+i3/misc, ncmpcpp, terminator, and vim
