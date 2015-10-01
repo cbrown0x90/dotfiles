@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Author: Raphael P. Ribeiro <raphaelpr01@gmail.com> 
+
+MPCSTAT=$(mpc | grep -v '^volume:')
+if [ -z "${MPCSTAT}" ]; then # if not playing, exit
+    echo "$line" || exit 1
+else
+    MPCSTAT2=$(echo "${MPCSTAT}" | sed 's,  *, ,g; 1h;1d;2G' | head -n1 | cut -d ']' -f 1 | tr -d \[)
+    PLAYING=$(echo "${MPCSTAT}" | sed 's,  *, ,g; 1h;1d;2G' | paste -d' ' -s - | awk '{ print substr($0, index($0,$5)) }')
+    TIME=$(echo "${MPCSTAT}" | sed 's,  *, ,g; 1h;1d;2G' | paste -d' ' -s - | head -n1 | cut -d ' ' -f3)
+    if [[ $MPCSTAT2 == "playing" ]]; then
+        echo "$PLAYING ($TIME)"
+        echo $PLAYING
+        echo "#99CC99"
+        exit 0
+    else
+        echo "$PLAYING ($TIME)"
+        echo $PLAYING
+        echo "#F2777A"
+        exit 0
+    fi
+fi

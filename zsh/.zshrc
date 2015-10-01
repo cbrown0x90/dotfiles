@@ -23,8 +23,16 @@ export LC_CTYPE=en_US.UTF-8
 
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+alias ll='ls --color=auto -l'
+alias la='ls --color=auto -a'
+alias lla='ls --color=auto -a -l'
+alias l='ls --color=auto'
 alias ls='ls --color=auto'
+alias 'sudo pacman -R'='sudo pacman -Rns'
+alias please='eval "sudo $(fc -ln -1)"'
+alias c=clear
 
 if [[ $TERM == 'screen' ]]; then
     export TERM='screen-256color'
 fi
+source /usr/share/doc/pkgfile/command-not-found.zsh

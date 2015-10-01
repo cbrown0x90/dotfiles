@@ -1,0 +1,7 @@
+STATUS=$(curl -d '{"jsonrpc": "2.0", "id": 1, "method": "core.playback.get_state"}' http://localhost:6680/mopidy/rpc | awk '{print $6}' | cut -d '"' -f2)
+
+if [ $STATUS = "paused" ]; then
+    curl -d '{"jsonrpc": "2.0", "id": 1, "method": "core.playback.play"}' http://localhost:6680/mopidy/rpc
+elif [ $STATUS = "playing" ]; then
+    curl -d '{"jsonrpc": "2.0", "id": 1, "method": "core.playback.pause"}' http://localhost:6680/mopidy/rpc
+fi
