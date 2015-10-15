@@ -1,5 +1,3 @@
-#For Terminator to lock exactly like my screenshot my zsh config is required.
-
 [global_config]
   focus = system
   suppress_multiple_term_dialog = True
@@ -27,3 +25,6 @@
     cursor_color = "#dcdcdc"
     foreground_color = "#dcdcdc"
     palette = "#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc:#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
