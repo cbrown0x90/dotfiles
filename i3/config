@@ -1,20 +1,19 @@
 # Super/Windows key is $mod
 set $mod Mod4
 
-font pango: Cantarell, FontAwesome 12
+font pango: Cantarell, FontAwesome 10
 
 # Shortcuts to open common apps:
 bindsym $mod+Return exec terminator
-bindsym $mod+Shift+c exec chromium --touch-events=enabled
+bindsym $mod+Shift+c exec chromium-continuous-bin --touch-events=enabled
 bindsym XF86LaunchA exec scrot -q 100 && mv ~/*.png ~/Pictures/Screenshots  
 bindsym $mod+Shift+s exec LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
-bindsym $mod+Shift+n exec terminator -x zsh -c 'ncmpcpp' #Unicode chars don't work when launched this way for NO reason
-bindsym $mod+Shift+w exec VBoxSDL -vm 'Windows 7'
+bindsym $mod+Shift+n workspace 5: Music; exec terminator -e 'ncmpcpp' 
 
 # mopidy commands
-bindsym XF86AudioNext exec ~/.i3/mopidy-next
-bindsym XF86AudioPrev exec ~/.i3/mopidy-previous
-bindsym XF86AudioPlay exec ~/.i3/mopidy-play
+bindsym XF86AudioNext exec ~/.i3/mopidy/mopidy-next
+bindsym XF86AudioPrev exec ~/.i3/mopidy/mopidy-previous
+bindsym XF86AudioPlay exec ~/.i3/mopidy/mopidy-play
 
 # Shortcuts for scripts:
 bindsym $mod+Ctrl+d exec xrandr --auto
@@ -36,13 +35,17 @@ bindsym $mod+Ctrl+Shift+b border none
 # Default gaps
 gaps inner 15
 
-# Adjust volume up and down with a notification:
+# Adjust volume up and down:
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 bindsym XF86AudioMute exec amixer sset Master toggle
 
+# Adjust brightness up and down:
+bindsym XF86MonBrightnessUp exec ~/.i3/brightness/bright-up
+bindsym XF86MonBrightnessDown exec ~/.i3/brightness/bright-down
+
 # start rofi with config (requires compton to work right)
-bindsym $mod+Shift+d exec rofi -show run -font Cantarell\ 10 -fg \#BAE4F0 -bg argb:7F2D2D2D -hlfg \#2D2D2D -hlbg \#BAE4F0 -bw 1 -bc \#BAE4F0 -columns 1 -width 100 -lines 5 -location 1 -padding 2
+bindsym $mod+Shift+d exec rofi -show run -font Cantarell\ 10 -fg \#DDDDDD -bg argb:7F2D2D2D -hlfg \#2D2D2D -hlbg \#DDDDDD -bw 0 -bc \#DDDDDD -columns 1 -lines 5 -padding 2
 
 # Change focus
 bindsym $mod+h focus left
@@ -161,7 +164,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Ctrl+l exec ~/.i3/i3lock.sh
 
 #border for gaps config
-new_window pixel 2
+new_window pixel 0
 
 client.focused          #36C3E0 #36C3E0 #2d2d2d #36C3E0
 client.focused_inactive #393939 #393939 #999999 #393939
@@ -181,7 +184,6 @@ bar {
 }
 
 # Startup programs:
-exec start-stop-daemon --start --chuid chris --background --exec /bin/mopidy
 exec --no-startup-id feh --bg-fill ~/Pictures/Background/X39qMYI.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -b --conf ~/.i3/compton

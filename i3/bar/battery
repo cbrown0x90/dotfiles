@@ -1,0 +1,40 @@
+#!/bin/bash
+# Show battery percentage and status in i3bar.
+# Change the color with the percentage and display low battery notifications.
+
+POWER=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+STATE=$(echo $POWER | sed ':a;N;$!ba;s/\n/ /g' | awk '{print $33}')
+PERCENTAGE=$(echo $POWER | sed ':a;N;$!ba;s/\n/ /g' | awk '{print substr($60, 0, length($60)-1)}')
+
+# Add the percentage battery remaining:
+if [[ "$STATE" == "charging" ]]; then
+    echo " $PERCENTAGE%"
+    echo " $PERCENTAGE%"
+    echo "#99CC99"   
+elif [[ "$STATE" == "fully-charged" ]]; then
+    echo " Capacity"
+    echo " Capacity"
+    echo "#99CC99"
+elif [[ "$STATE" == "discharging" ]]; then
+    if [[ "$PERCENTAGE" -lt "20" ]]; then
+        echo " $PERCENTAGE%"
+        echo " $PERCENTAGE%"
+        echo "#F2777A"
+    elif [[ "$PERCENTAGE" -lt "40" ]]; then
+        echo " $PERCENTAGE%"
+        echo " $PERCENTAGE%"
+        echo "#F99157"
+    elif [[ "$PERCENTAGE" -lt "60" ]]; then
+        echo " $PERCENTAGE%"
+        echo " $PERCENTAGE%"
+        echo "#FFCC66"
+    elif [[ "$PERCENTAGE" -lt "85" ]]; then
+        echo " $PERCENTAGE%"
+        echo " $PERCENTAGE%"
+        echo "#99CC99"
+    else
+        echo " $PERCENTAGE%"
+        echo " $PERCENTAGE%"
+        echo "#99CC99"
+    fi
+fi

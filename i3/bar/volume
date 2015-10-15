@@ -5,6 +5,7 @@
 
 # Get the volume percentage:
 VOLUME=$(amixer sget Master | egrep -o -m 1 "[0-9]+%")
+RAW=$(echo $VOLUME | awk '{print substr($0, 0, length($0)-1)}')
 
 # Check if muted:
 STATE=`amixer sget Master | egrep -m 1 'Playback.*?\[o' | egrep -o '\[o.+\]'`
@@ -21,13 +22,23 @@ esac
 
 # What to display in i3bar:
 if [[ $STATE == '[off]' ]]; then
-        echo "Volume: Muted"
-        echo "Muted"
+        echo " Muted"
+        echo ""
         echo "#F2777A"
         exit 0
+elif [[ $RAW == 0 ]]; then
+        echo "" $VOLUME
+        echo "" $VOLUME
+        echo "#F2777A"
+        exit 0 
+elif [[ $RAW -lt 51 ]]; then
+        echo "" $VOLUME
+        echo "" $VOLUME
+        echo "#99CC99"
+        exit 0
 else
-        echo "Volume: " $VOLUME
-        echo $VOLUME
+        echo "" $VOLUME
+        echo "" $VOLUME
         echo "#99CC99"
         exit 0
 fi

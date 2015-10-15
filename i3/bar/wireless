@@ -4,9 +4,10 @@
 # If it's disconnected, show it as red. If dormannt, as yellow.
 
 wlan_state="$(cat /sys/class/net/wlan0/operstate)"
+ip=$(ip -o -4 addr show dev wlan0 | awk -F '[ /]+' '/global/ {print $4}')
 
 if [ "$wlan_state" = "up" ]; then
-        echo ""
+        echo "" $ip
         echo ""
         echo "#99CC99"
         exit 0

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get the volume percentage:
+CUR=$(cat /sys/class/backlight/nv_backlight/brightness)
+PER=$CUR'%'
+
+# What to display in i3bar:
+echo "" $PER
+echo "" $PER
+echo "#BAE4F0"
