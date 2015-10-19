@@ -1,7 +1,7 @@
 source /usr/share/zsh/scripts/antigen/antigen.zsh
 export PATH=$PATH:/usr/include
 
-fortune ~/.config/fortune -e | cowsay -f stegosaurus
+fortune ~/.config/fortune -e | cowsay -f stegosaurus | lolcat
 
 antigen bundle git
 antigen bundle pip
@@ -33,6 +33,7 @@ alias l='ls --color=auto'
 alias ls='ls --color=auto'
 alias please='eval "sudo $(fc -ln -1)"'
 alias c=clear
+alias 'aurget -Syu'='aurget --devel --deps --noconfirm --noedit'
 
 if [[ $TERM == 'screen' ]]; then
     export TERM='screen-256color'
