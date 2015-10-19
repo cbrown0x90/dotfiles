@@ -8,6 +8,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+c exec chromium-continuous-bin --touch-events=enabled
 bindsym XF86LaunchA exec scrot -q 100 && mv ~/*.png ~/Pictures/Screenshots  
 bindsym $mod+Shift+s exec LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
+bindsym $mod+1 workspace 1: Web
 bindsym $mod+Shift+n workspace 5: Music; exec terminator -e 'ncmpcpp' 
 
 # mopidy commands
@@ -27,13 +28,13 @@ bindsym Mod1+F4 kill
 
 # Keybindings to add and remove i3-gaps:
 bindsym $mod+Ctrl+g gaps inner current plus 5
-bindsym $mod+Ctrl+Shift+g gaps outer current plus 5
+bindsym $mod+Ctrl+Shift+g gaps inner all set 15
 bindsym $mod+Ctrl+p gaps inner current minus 5
-bindsym $mod+Ctrl+Shift+p gaps outer current minus 5
+bindsym $mod+Ctrl+Shift+p gaps inner all set 0
 bindsym $mod+Ctrl+b border pixel 2
 bindsym $mod+Ctrl+Shift+b border none
 # Default gaps
-gaps inner 15
+gaps inner 0
 
 # Adjust volume up and down:
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
@@ -102,7 +103,6 @@ bindsym $mod+a focus parent
 
 
 # Switch to workspace
-bindsym $mod+1 workspace 1: Web
 bindsym $mod+2 workspace 2: Personal
 bindsym $mod+3 workspace 3: Work
 bindsym $mod+4 workspace 4: Misc
