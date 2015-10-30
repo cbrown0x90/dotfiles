@@ -1,22 +1,13 @@
 source /usr/share/zsh/scripts/antigen/antigen.zsh
 export PATH=$PATH:/usr/include
 
-fortune ~/.config/fortune -e | cowsay -f stegosaurus | lolcat
+fortune | cowsay
 
-antigen bundle git
-antigen bundle pip
-antigen bundle rsync
-antigen bundle python
-antigen bundle virtualenvwrapper
-antigen bundle node
-antigen bundle npm
-antigen bundle bundler
 antigen bundle zsh-users/zsh-completions src
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle kennethreitz/autoenv
 antigen bundle command-not-found
 antigen bundle history
-antigen bundle fabric
 
 # Created by newuser for 5.1.1
 autoload -U compinit
@@ -38,5 +29,3 @@ alias 'aurget -Syu'='aurget --devel --deps --noconfirm --noedit'
 if [[ $TERM == 'screen' ]]; then
     export TERM='screen-256color'
 fi
-source /usr/share/doc/pkgfile/command-not-found.zsh
-eval $(thefuck --alias)
