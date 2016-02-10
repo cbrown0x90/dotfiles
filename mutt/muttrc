@@ -1,3 +1,5 @@
+source ~/.mutt/contacts
+
 set editor='vim'
 bind index R imap-fetch-mail
 macro index,pager A "<save-message>=[Gmail]/All <enter><enter><sync-mailbox><enter>" "Archive"
@@ -9,6 +11,9 @@ macro index gi <change-folder>=INBOX<enter> "Go to Gmail Inbox"
 macro index G "<change-folder>?"
 macro index,pager i "<flag-message><sync-mailbox>" 'Flag as important'
 macro index,pager I "<clear-flag>!<sync-mailbox>" 'Remove important flag'
+
+#Format sent mail
+set text_flowed = yes
 
 #Newest first
 set sort = reverse-threads
