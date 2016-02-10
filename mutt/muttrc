@@ -1,6 +1,18 @@
 set editor='vim'
-bind index G imap-fetch-mail
-macro index,pager L "<save-message>=[Gmail]/All <enter><enter><sync-mailbox><enter>" "Archive"
+bind index R imap-fetch-mail
+macro index,pager A "<save-message>=[Gmail]/All <enter><enter><sync-mailbox><enter>" "Archive"
+macro index,pager S "<save-message>=[Gmail]/Starred<enter><enter><sync-mailbox><enter>" "Star"
+
+macro index gs <change-folder>=[Gmail]/Starred<enter> "Go to 'Starred'"
+#macro index ga "<change-folder>=[Gmail]/All <enter>" "Go to all mail"
+macro index gi <change-folder>=INBOX<enter> "Go to Gmail Inbox"
+macro index G "<change-folder>?"
+macro index,pager i "<flag-message><sync-mailbox>" 'Flag as important'
+macro index,pager I "<clear-flag>!<sync-mailbox>" 'Remove important flag'
+
+#Newest first
+set sort = reverse-threads
+set sort_aux = last-date-received
 
 set folder = imaps://imap.gmail.com/
 #set imap_user = 
