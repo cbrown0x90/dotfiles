@@ -27,8 +27,8 @@ set spoolfile = +INBOX
 mailboxes = +GMail/INBOX
 unset record
 
-bind pager <Down> next-page
-bind pager <Up> previous-page
+bind pager <Down> next-line
+bind pager <Up> previous-line
 
 # Store message headers locally to speed things up.
 # If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
