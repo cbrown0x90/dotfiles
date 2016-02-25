@@ -1,4 +1,4 @@
-fortune -s | cowsay
+fortune -s | cowsay -f (ls /home/chris/.scripts/cowsay | shuf | head -n 1)
 
 set -gx PATH $PATH /usr/local/bin
 
