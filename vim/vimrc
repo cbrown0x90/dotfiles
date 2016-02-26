@@ -8,7 +8,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'wlangstroth/vim-racket'
 
@@ -20,6 +19,8 @@ if has("autocmd")
     au filetype racket set lisp
     au filetype racket set autoindent
 endif
+
+filetype plugin on
 
 set updatetime=30000
 autocmd CursorHold,CursorHoldI <buffer> silent update
@@ -34,13 +35,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-let g:EasyMotion_do_mapping = 0
-nmap f <Plug>(easymotion-s)
-nmap F <Plug>(easymotion-s2)
-let g:EasyMotion_smartcase = 1
-"map <Leader>j <Plug>(easymotion-j)
-"map <Leader>k <Plug>(easymotion-k)
 
 set number
 set showbreak=+++
