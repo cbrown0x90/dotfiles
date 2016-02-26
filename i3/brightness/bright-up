@@ -1,6 +1,0 @@
-#!/bin/bash
-
-CUR=$(cat /sys/class/backlight/nv_backlight/brightness)
-if [ "$(($CUR + 10))" -lt 101 ]; then
-    echo $(($CUR + 10)) > /sys/class/backlight/nv_backlight/brightness
-fi
