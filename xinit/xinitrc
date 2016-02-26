@@ -5,7 +5,7 @@ if [ -a /etc/gentoo-release ]; then
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200 
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5 
-    /home/chris/.scripts/clock.sh &
+    /home/chris/.scripts/helper\ scripts/clock.sh &
     feh --bg-fill ~/Pictures/Personal/GentooPape.png
     compton -b
     xrdb -merge ~/.Xresources
