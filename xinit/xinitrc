@@ -19,6 +19,6 @@ else
             sleep 1s
         done &
     /home/chris/.scripts/dwm/startup &
-    exec dwm
+    /usr/local/bin/dwm
 fi
 #startlxde
