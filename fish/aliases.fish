@@ -4,6 +4,7 @@ alias la 'ls -Fa --color=auto'
 alias lla 'ls -Fla --color=auto'
 alias ping 'ping -c3'
 alias scrot 'scrot -e \'mv $f ~/Pictures/Screenshots/\''
+alias vim nvim
 
 function please
     eval sudo $history[1]
