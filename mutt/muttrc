@@ -12,6 +12,9 @@ macro index G "<change-folder>?"
 macro index,pager i "<flag-message><sync-mailbox>" 'Flag as important'
 macro index,pager I "<clear-flag>!<sync-mailbox>" 'Remove important flag'
 
+macro pager c "<enter-command>unset markers<enter>" "remove next line marker"
+macro pager C "<enter-command>set markers<enter>" "re-add next line marker"
+
 #Format sent mail
 set text_flowed = yes
 
@@ -20,8 +23,8 @@ set sort = reverse-threads
 set sort_aux = last-date-received
 
 set folder = imaps://imap.gmail.com/
-#set imap_user = 
-#set imap_pass = 
+#set imap_user =
+#set imap_pass =
 
 set spoolfile = +INBOX
 mailboxes = +GMail/INBOX
@@ -51,8 +54,8 @@ set imap_keepalive = 300
 # How often to check for new mail (time in seconds).
 set mail_check = 120
 
-#set smtp_url = 
-#set smtp_pass = 
+#set smtp_url =
+#set smtp_pass =
 set from = "chris@cbrown.io"
 set realname = "Christopher Brown"
 
