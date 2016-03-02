@@ -8,9 +8,9 @@
 		</item>
 	</menu>
 	<menu id="apps-term-menu" label="Terminals">
-		<item label="urxvt">
+		<item label="st">
 			<action name="Execute">
-				<execute>urxvt</execute>
+				<execute>st</execute>
 			</action>
 		</item>
 	</menu>
