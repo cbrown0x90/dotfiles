@@ -44,7 +44,9 @@ set tw=100
 
 " spaces per TAB
 set tabstop=4
-set softtabstop=4
+set softtabstop=0
+set shiftwidth=4
+set noexpandtab
 
 " set colors
 let base16colorspace=256
