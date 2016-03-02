@@ -1,3 +1,54 @@
+! Base16 Twilight
+! Scheme: David Hart (http://hart-dev.com)
+
+#define base00 #1e1e1e
+#define base01 #323537
+#define base02 #464b50
+#define base03 #5f5a60
+#define base04 #838184
+#define base05 #a7a7a7
+#define base06 #c3c3c3
+#define base07 #ffffff
+#define base08 #cf6a4c
+#define base09 #cda869
+#define base0A #f9ee98
+#define base0B #8f9d6a
+#define base0C #afc4db
+#define base0D #7587a6
+#define base0E #9b859d
+#define base0F #9b703f
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
+
 ! URxvt Style !
 ! URxvt*termName: screen-256color
 URxvt.depth: 32
@@ -17,42 +68,3 @@ URxvt.preeditType: OverTheSpot
 ! URxvt Special Keys !
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
-
-! Colorscheme Tomorrow Dark
-! special
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  #c5c8c6
-
-! black
-*.color0:       #1d1f21
-*.color8:       #969896
-
-! red
-*.color1:       #cc6666
-*.color9:       #cc6666
-
-! green
-*.color2:       #b5bd68
-*.color10:      #b5bd68
-
-! yellow
-*.color3:       #f0c674
-*.color11:      #f0c674
-
-! blue
-*.color4:       #81a2be
-*.color12:      #81a2be
-
-! magenta
-*.color5:       #b294bb
-*.color13:      #b294bb
-
-! cyan
-*.color6:       #8abeb7
-*.color14:      #8abeb7
-
-! white
-*.color7:       #c5c8c6
-*.color15:      #ffffff
-
