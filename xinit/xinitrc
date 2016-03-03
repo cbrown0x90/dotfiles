@@ -1,5 +1,6 @@
-!/bin/bash
+#!/bin/bash
 
+# Runs on Gentoo
 if [ -a /etc/gentoo-release ]; then
 	xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
 	xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
@@ -10,6 +11,7 @@ if [ -a /etc/gentoo-release ]; then
 	compton -b
 	xscreensaver -no-splash &
 	openbox
+# Runs on Arch
 else
 	while true
 		do
@@ -17,6 +19,6 @@ else
 			xsetroot -name "$BAR"
 			sleep 1s
 		done &
-	/home/chris/.scripts/dwm/startup &
-	/usr/local/bin/dwm
+	/home/chris/.scripts/dwm/startup
+	dwm
 fi
