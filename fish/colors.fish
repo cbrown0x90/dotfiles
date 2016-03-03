@@ -1,3 +1,4 @@
+# Set the colors of the shell
 set fish_color_param cyan
 set fish_color_command blue
 set fish_color_error red
