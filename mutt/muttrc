@@ -1,49 +1,44 @@
 source ~/.mutt/contacts
 
+# vim is the best
 set editor='vim'
+
+# refresh the e-mail
 bind index R imap-fetch-mail
+
+# move messages
 macro index,pager A "<save-message>=[Gmail]/All <enter><enter><sync-mailbox><enter>" "Archive"
 macro index,pager S "<save-message>=[Gmail]/Starred<enter><enter><sync-mailbox><enter>" "Star"
 
+# move around mailboxes
 macro index gs <change-folder>=[Gmail]/Starred<enter> "Go to 'Starred'"
-#macro index ga "<change-folder>=[Gmail]/All <enter>" "Go to all mail"
 macro index gi <change-folder>=INBOX<enter> "Go to Gmail Inbox"
 macro index G "<change-folder>?"
+
+# flag as importand or remove flag
 macro index,pager i "<flag-message><sync-mailbox>" 'Flag as important'
 macro index,pager I "<clear-flag>!<sync-mailbox>" 'Remove important flag'
 
+# remove the '+' for easy copy pasta
 macro pager c "<enter-command>unset markers<enter>" "remove next line marker"
 macro pager C "<enter-command>set markers<enter>" "re-add next line marker"
 
-#Format sent mail
+# Format sent mail
 set text_flowed = yes
 
-#Newest first
+# Newest first
 set sort = reverse-threads
 set sort_aux = last-date-received
 
+# set up actual mail information
 set folder = imaps://imap.gmail.com/
-#set imap_user =
-#set imap_pass =
-
 set spoolfile = +INBOX
 mailboxes = +GMail/INBOX
 unset record
 
+# easy movement in emails
 bind pager <Down> next-line
 bind pager <Up> previous-line
-
-# Store message headers locally to speed things up.
-# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
-set header_cache = ~/.cache/mutt
-
-# Store messages locally to speed things up, like searching message bodies.
-# Can be the same folder as header_cache.
-# This will cost important disk usage according to your e-mail amount.
-set message_cachedir = "~/.cache/mutt"
-
-#Specify where to save and/or look for postponed messages.
-set postponed = +[Gmail]/Drafts
 
 # Allow Mutt to open new imap connection automatically.
 unset imap_passive
@@ -54,13 +49,12 @@ set imap_keepalive = 300
 # How often to check for new mail (time in seconds).
 set mail_check = 120
 
-#set smtp_url =
-#set smtp_pass =
+# mail sending options
 set from = "chris@cbrown.io"
 set realname = "Christopher Brown"
 
-source ~/.mutt/gpg.rc
+# GPG information
+source ~/.mutt/gpg.rc #default gpg.rc copy pasted
 set pgp_auto_decode
 set crypt_replyencrypt
 set crypt_autosign = yes
-
