@@ -38,10 +38,6 @@ syntax on
 set ruler
 set undolevels=1000
 
-" wrap at 100
-set fo+=aw
-set tw=100
-
 " spaces per TAB
 set tabstop=4
 set softtabstop=0
