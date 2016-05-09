@@ -194,7 +194,13 @@
         <name>terminal</name>
         <command>st</command>
       </action>
-    </keybind>
+	</keybind>
+	<keybind key="W-d">
+      <action name="Execute">
+        <name>toggle clock</name>
+		<command>/home/chris/.scripts/helper\ scripts/toggle-clock</command>
+      </action>
+	</keybind>
     <keybind key="C-A-Right">
       <action name="GoToDesktop">
         <to>right</to>

@@ -11,7 +11,7 @@ if [ -a /etc/gentoo-release ]; then
 	compton -b
 	xscreensaver -no-splash &
 	openbox
-# Runs on Arch
+ Runs on Arch
 else
 	while true
 		do
