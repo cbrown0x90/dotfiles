@@ -1,5 +1,5 @@
 # connection settings
-mpd_host = elba
+mpd_host = Sicily
 mpd_port = 6600
 mpd_music_dir = "/home/chris/Music"
 

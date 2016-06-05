@@ -1,8 +1,9 @@
 # cowsay on launch
-fortune -s | cowsay -f (ls /home/chris/.scripts/cowsay | shuf | head -n 1)
+fortune -s | cowsay
 
 # modify the path
-set -gx PATH $PATH /usr/local/bin
+set -gx PATH ~/.scripts/bin $PATH /usr/local/bin /usr/sbin /sbin
+set -gx JAVA_HOME /opt/icedtea-bin-3.0.1
 
 # ?
 export LC_CTYPE=en_US.UTF-8

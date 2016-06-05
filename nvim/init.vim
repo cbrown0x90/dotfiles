@@ -40,9 +40,9 @@ set undolevels=1000
 
 " spaces per TAB
 set tabstop=4
-set softtabstop=0
+set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 
 " set colors
 let base16colorspace=256
