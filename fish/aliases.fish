@@ -7,6 +7,7 @@ alias ping 'ping -c3'
 alias scrot 'scrot -e \'mv $f ~/Pictures/Screenshots/\''
 alias vim nvim
 alias c 'clear'
+alias qutebrowser 'qutebrowser --backend webengine'
 
 # typing please runs last command with sudo
 function please
