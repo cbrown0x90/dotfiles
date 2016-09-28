@@ -33,7 +33,7 @@ set sort_aux = last-date-received
 # set up actual mail information
 set folder = imaps://imap.gmail.com/
 set spoolfile = +INBOX
-mailboxes = +GMail/INBOX
+#mailboxes = +GMail/INBOX
 unset record
 
 # easy movement in emails
@@ -58,3 +58,12 @@ source ~/.mutt/gpg.rc #default gpg.rc copy pasted
 set pgp_auto_decode
 set crypt_replyencrypt
 set crypt_autosign = yes
+
+#sidebar
+set sidebar_width=20
+set sidebar_visible=yes
+mailboxes =Inbox =[Gmail]/All\ Mail =[Gmail]/Starred =[Gmail]/Sent\ Mail
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
