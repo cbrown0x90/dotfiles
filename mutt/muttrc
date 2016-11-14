@@ -50,7 +50,7 @@ set imap_keepalive = 300
 set mail_check = 120
 
 # mail sending options
-set from = "chris@cbrown.io"
+set from = "cebrown5597@gmail.com"
 set realname = "Christopher Brown"
 
 # GPG information
