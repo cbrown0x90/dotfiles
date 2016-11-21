@@ -1,10 +1,5 @@
 #!/bin/bash
 
-while true
-	do
-		BAR=$(/home/chris/.scripts/dwm/bar)
-		xsetroot -name "$BAR"
-		sleep 1s
-	done &
+/home/chris/.scripts/dwm/bar &
 /home/chris/.scripts/dwm/startup
 dwm
