@@ -2,7 +2,7 @@
 fortune -s | cowsay
 
 # modify the path
-set -gx PATH ~/.scripts $PATH /usr/local/bin /usr/sbin /sbin /usr/games/bin
+set -gx PATH ~/.scripts $PATH /usr/local/bin /usr/sbin /sbin
 set -gx JAVA_HOME /opt/icedtea-bin-3.0.1
 
 # ?
