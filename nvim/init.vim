@@ -10,6 +10,7 @@ call plug#begin()
 	Plug 'chriskempson/base16-vim'
 	Plug 'bling/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+    Plug 'lervag/vimtex'
 call plug#end()
 
 " color parens
@@ -58,7 +59,6 @@ nnoremap B ^
 nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
-inoremap jk <esc>
 
 " remove whitespace at the end of line
 augroup configgroup
