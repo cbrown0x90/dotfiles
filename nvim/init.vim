@@ -3,14 +3,12 @@ let mapleader = ","
 
 " load plugins
 call plug#begin()
-	Plug 'scrooloose/nerdtree'
 	Plug 'Raimondi/delimitMate'
 	Plug 'luochen1990/rainbow'
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'chriskempson/base16-vim'
 	Plug 'bling/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-    Plug 'lervag/vimtex'
 call plug#end()
 
 " color parens
@@ -27,6 +25,10 @@ set noshowmode
 
 " Autocomplete plugin
 let g:deoplete#enable_at_startup = 1
+
+" Python
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " copies everything to both clipboards
 set clipboard+=unnamedplus
