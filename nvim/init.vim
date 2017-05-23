@@ -1,5 +1,6 @@
 " custom leader
 let mapleader = ","
+set mouse=a
 
 " load plugins
 call plug#begin()
