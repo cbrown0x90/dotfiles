@@ -7,10 +7,3 @@ alias ping 'ping -c3'
 alias scrot 'scrot -e \'mv $f ~/Pictures/Screenshots/\''
 alias vim nvim
 alias c 'clear'
-alias paste 'xclip -selection clipboard -o'
-alias rm srm
-
-# typing please runs last command with sudo
-function please
-    eval sudo $history[1]
-end
