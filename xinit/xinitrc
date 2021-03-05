@@ -1,5 +1,0 @@
-#!/bin/bash
-
-/home/chris/.scripts/dwm/bar &
-/home/chris/.scripts/dwm/startup
-dwm
