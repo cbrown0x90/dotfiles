@@ -15,12 +15,10 @@ call plug#end()
 " color parens
 let g:rainbow_active = 1
 
-" nerdtree control
-map <C-n> :NERDTreeToggle<CR>
-
 " airline conf
 let g:airline_detect_crypt = 0
 let g:airline_theme='base16_twilight'
+
 " removes the mode notification from the bufferline
 set noshowmode
 
@@ -28,7 +26,6 @@ set noshowmode
 let g:deoplete#enable_at_startup = 1
 
 " Python
-let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " copies everything to both clipboards
